@@ -1,11 +1,15 @@
-
+#include <Wire.h>
 
 #include "Roaster.h"
 #include "RoastingProfile.h"
 #include "RoastingProfile.h"
+#include "Lcd.h"
+
 
 Roaster *roaster = Roaster::instance();
 RoastingProfile *profile =  RoastingProfile::instance(); 
+
+
 
 void setup() {
     // put your setup code here, to run once:
@@ -24,5 +28,5 @@ void setup() {
 }
 
 void loop() {
-  roaster->run();
+  roaster->run();  
 }

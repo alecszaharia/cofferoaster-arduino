@@ -5,9 +5,12 @@
 #include "IddleState.h"
 #include "Roaster.h"
 #include "RoastingProfile.h"
+#include "Lcd.h"
 
 IddleState::IddleState() {
   startButton = new Button(START_PIN, true, true, 20);
+  // add page to the lcd interface
+  // lcd_page->setXXXX();
 }
 
 IddleState *IddleState::instance() {
@@ -24,6 +27,9 @@ void IddleState::run() {
       Roaster::instance()->startRoast(RoastingProfile::instance());
   }
 
+  // add LcdIddlePage dependecies
+
+  Lcd::instance()->setPage(&lcd_page);  
 }
 
 IddleState::~IddleState() {

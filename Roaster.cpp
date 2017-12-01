@@ -6,6 +6,7 @@
 #include "RoastingProfile.h"
 #include "RoastingState.h"
 #include "IddleState.h"
+#include "Lcd.h"
 
 Roaster::Roaster() {
     stopRoast();
@@ -25,16 +26,22 @@ void Roaster::setState(StateInterface *state) {
 }
 
 void Roaster::run() {
-    StateInterface *pInterface = Roaster::getState();
 
-    if(pInterface)
-        pInterface->run();
+    StateInterface *pstate = getState();
+
+    if(pstate)
+    {
+      pstate->run();          
+    }   
+
+   
+    Lcd::instance()->render();
 }
 
 void Roaster::startRoast(RoastingProfile *profile) {
-  RoastingState *roastingState = RoastingState::instance();
+  RoastingState *roastingState = RoastingState::instance();  
   roastingState->setProfile(profile);
-  Roaster::setState(roastingState);
+  setState(roastingState);
 }
 
 void Roaster::stopRoast() {    

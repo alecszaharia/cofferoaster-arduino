@@ -4,6 +4,7 @@
 
 #include "RoastingState.h"
 #include "Roaster.h"
+#include "Lcd.h"
 
 RoastingState *RoastingState::instance() {
    static RoastingState roasting_instance;
@@ -26,6 +27,8 @@ void RoastingState::run() {
     Serial.println("Stop roast");  
       Roaster::instance()->stopRoast();
   }
+
+  Lcd::instance()->setPage(&lcd_page);  
 }
 
 RoastingState::~RoastingState() {

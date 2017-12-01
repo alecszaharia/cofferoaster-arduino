@@ -3,6 +3,8 @@
 //
 #include <Button.h> 
 #include "StateInterface.h"
+#include "LcdAware.h"
+#include "LcdIddlePage.h"
 
 
 #ifndef ROASTER_STATE_H
@@ -14,6 +16,7 @@ const int START_PIN = 12; //Connect a tactile button switch (or something simila
 class IddleState : public StateInterface {
 
   Button *startButton;
+  LcdIddlePage lcd_page;
 
 public:
 
