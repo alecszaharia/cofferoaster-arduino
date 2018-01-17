@@ -1,1 +1,4 @@
-CMakeLists.txt not found in /home/alex/Arduino/CoffeRoaster_New/main
+/home/alex/Applications/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/alex/CLionProjects/CoffeRoaster
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/alex/CLionProjects/CoffeRoaster/cmake-build-debug
